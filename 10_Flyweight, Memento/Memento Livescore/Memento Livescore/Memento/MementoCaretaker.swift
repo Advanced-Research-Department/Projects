@@ -9,20 +9,20 @@
 import UIKit
 
 protocol MementoCaretakerProtocol {
-    func add(match: SimpleMatchSnapshot)
-    func undo() -> SimpleMatchSnapshot?
+    func add(match: SimpleMatchMemento)
+    func undo() -> SimpleMatchMemento?
 }
 
 class MementoCaretaker: MementoCaretakerProtocol {
  
-    private var matches: [SimpleMatchSnapshot] = []
+    private var matches: [SimpleMatchMemento] = []
     
-    func add(match: SimpleMatchSnapshot) {
+    func add(match: SimpleMatchMemento) {
         matches.append(match)
     }
     
     // go to previous item
-    func undo() -> SimpleMatchSnapshot? {
+    func undo() -> SimpleMatchMemento? {
         return matches.popLast()
     }
 }

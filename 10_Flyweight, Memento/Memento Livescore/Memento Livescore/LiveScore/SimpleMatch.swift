@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol SimpleMatchSnapshot {
+protocol SimpleMatchMemento {
     
 }
 
-class SimpleMatch: SimpleMatchSnapshot {
+class SimpleMatch: SimpleMatchMemento {
     
     var homeTeam: String = ""
     var awayTeam: String = ""

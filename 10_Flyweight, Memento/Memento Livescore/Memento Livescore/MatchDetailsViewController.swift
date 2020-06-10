@@ -20,8 +20,14 @@ class MatchDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("Created MatchDetails:", match?.homeTeam ?? "homeTeam", "vs", match?.awayTeam ?? "awayTeam")
+        
         setupViews()
         removePreviousScreen()
+    }
+    
+    deinit {
+        print("Deinit MatchDetails:", match?.homeTeam ?? "homeTeam", "vs", match?.awayTeam ?? "awayTeam")
     }
     
     private func setupViews() {
@@ -38,6 +44,8 @@ class MatchDetailsViewController: UIViewController {
     private func removePreviousScreen() {
         guard let viewControllers = navigationController?.viewControllers else { return }
          
+        // viewControllers.count - 1 -> current screen
+        // viewControllers.count - 2 -> previous screen
         if let _ = viewControllers[safe: viewControllers.count - 2] as? MainViewController {
             return 
         }
